@@ -14,14 +14,19 @@ int main()
 		switch(option)
 		{
 			case 1:
-				NhapDaySoTuFile(a,N);
+				ThemSo(a,N);
 				break;
 			case 2:
-				TimSoTrongFile();
+				HienThiCacSo(a,N);
 				break;
 			case 3:
-				SinhSoNgauNhien();
+				NhapDaySoTuFile(a,N);
 				break;
+			case 4: 
+				LuuKhoSoXuongFile(a,N);
+				break;
+			case 5:
+				SinhSoNgauNhien(a, N);
 			case 0:
 				break;
 		};
@@ -31,7 +36,7 @@ int main()
 		}
 		else
 		{
-			cout<<"Nhap phim bat ky de tiep tuc: ";
+			cout<<"\n Nhap phim bat ky de tiep tuc ->";
 			cin.ignore();
 			cin.get();
 		}
