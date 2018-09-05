@@ -1,1 +1,2 @@
-# QuanLySo-CauTrucDuLieu
+# QuanLySo
+
