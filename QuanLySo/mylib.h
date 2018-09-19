@@ -11,6 +11,7 @@ int Menu()
 	cout<<"3. Nap day so tu file. \n";
 	cout<<"4. Luu kho so vao file. \n";
 	cout<<"5. Sinh so ngau nhien. \n";
+	cout<<"6. Copy file A -> Paste file B. \n";
 	cout<<"0. Ket thuc.\n";
 	int c;
 	cin>>c;
@@ -50,7 +51,7 @@ void NhapDaySoTuFile(int a[], int &N)
 	while(!fin.eof())
 	{
 		fin>>a[N];
-		cout<<a[N]<<" ";
+		//cout<<a[N]<<" ";
 		N++;
 	}
 	
@@ -65,18 +66,16 @@ void LuuKhoSoXuongFile(int a[], int N)
 	cout<<"Nhap ten file chua du lieu: ";
 	cin.ignore();
 	cin.getline(fileName,100);
-
-	ofstream fout(fileName);
 	
+	ofstream fout;
+	fout.open(fileName,ios::out|ios::app);
+
 		for(int i =0;i<N;i++)
 		{
-			fout<<a[i];
-			if(i < N-1)
-				fout<<" ";
+			fout<<" "<<a[i];
+			
 		}
 		fout.close();
-	
-
 }
 void TimSoTrongFile()
 {	
@@ -179,23 +178,26 @@ void ChepDuLieuTuFileAvaFileB()
 	cout<<"Nhap file copy du lieu: ";
 	cin.ignore();
 	cin.getline(fileName1,100);
+	ifstream fin(fileName1);
 
 	char fileName2[100];
 	cout<<"Nhap file paste du lieu: ";
 	cin.ignore();
 	cin.getline(fileName2,100);
 
-	ifstream fin(fileName1);
-	ofstream fout(fileName2);
+	ofstream fout;
+	fout.open(fileName2,ios::out|ios::app);
 
 	int N =0;
 	int a[1000000];
 
 	while (!fin.eof())
 	{
-		fin>>a[N++];
+		fin>>a[N];
+		N++;
 	}
-	for(int i = 0; i<N;i++)
+	int N1 = N;
+	for(int i = 0; i<N1;i++)
 	{
 		fout<<a[i]<<" ";
 	}

@@ -27,6 +27,10 @@ int main()
 				break;
 			case 5:
 				SinhSoNgauNhien(a, N);
+				break;
+			case 6:
+				ChepDuLieuTuFileAvaFileB();
+				break;
 			case 0:
 				break;
 		};
